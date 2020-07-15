@@ -12,6 +12,7 @@ const Movies = db.define('movies', {
     title: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique:true,
     },
     description: {
         type: DataTypes.STRING,
