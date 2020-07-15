@@ -24,4 +24,23 @@ module.exports = {
           res.send(error);
         }
       },
+      addMovie: async (req, res) => {
+        const { title, description, genre, release_year, author} = req.body;
+    
+        try {
+          const result = await Movies.create({
+            title,
+            description,
+            genre,
+            release_year,
+            author,
+          });
+          res.send({
+            message: `Post data success`,
+            result: result,
+          });
+        } catch (error) {
+          res.send(error);
+        }
+      },
 };
