@@ -12,5 +12,16 @@ module.exports = {
             res.send(error);
         }
     },
-
+    getMovieByGenre: async (req, res) => {
+        const { genre } = req.body;
+        try {
+          const result = await Movies.findOne({
+            where: { genre: genre },
+          });
+    
+          res.send({ result });
+        } catch (error) {
+          res.send(error);
+        }
+      },
 };
