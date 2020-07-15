@@ -2,12 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 const {
-    getAllUsers,
+    getAllMovies,
     getGenre,
+    postMovies,
 } = require('./controller');
 
-router.get('/', getAllUsers);
+router.get('/', getAllMovies);
 router.get('/:genre', getGenre);
+router.get('/', postMovies)
 
 
 module.exports = router;
