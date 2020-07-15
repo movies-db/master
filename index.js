@@ -7,6 +7,7 @@ const db = require('./config');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.set("view engine", "ejs");
 
 // Routes
 app.get('/', (req, res) => {
