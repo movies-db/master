@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const { db } = require('../config');
 
-const User = db.define('users', {
+const Movie = db.define('movies', {
     movie_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -29,6 +29,8 @@ const User = db.define('users', {
         type: DataTypes.DATE,
         allowNull: false,
     },
+},{
+    timestamps:false
 });
 
-module.exports = User;
+module.exports = Movie;

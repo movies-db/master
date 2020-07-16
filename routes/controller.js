@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { Movie } = require('../models');
 
 module.exports = {
     updateMovies: async (req, res) => {
@@ -17,7 +17,7 @@ module.exports = {
 
             res.send({
                 message:'data berhasil di update',
-                result:result,
+                result:results,
             })
         } catch (error) {
             res.send(error);
@@ -26,11 +26,11 @@ module.exports = {
     deleteMovie: async (req, res) => {
         const { id } = req.params;
         try {
-            const result = await Movie.destroy({where:id});
+            const results = await Movie.destroy({where:{movie_id:id}});
 
             res.send({
                 message: `Delete movie berhasil`,
-                results: result,
+                result: results,
             });
         } catch (error) {
             console.log(error);
