@@ -14,9 +14,11 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "starts": "node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "repository": "https://github.com/movies-db/movies-search.git",
+
   "author": "JuanBiantong <jbiantong@gmail.com>"
+
 }
