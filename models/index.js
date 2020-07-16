@@ -1,5 +1,5 @@
-const Movie = require('./Movie');
+const Movies = require('./Movies');
 
 module.exports = {
-    Movie,
+    Movies,
 };

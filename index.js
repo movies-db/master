@@ -8,9 +8,12 @@ const db = require('./config');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Routes
+app.set("view engine", "ejs");
+
+
 app.get('/', (req, res) => {
-    res.send(`Welcome to movies api`);
+    res.send(`Movie data`);
+
 });
 app.use('/api/movies', require('./routes'));
 
