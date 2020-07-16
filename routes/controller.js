@@ -2,7 +2,7 @@ const { Movie } = require('../models');
 
 module.exports = {
     updateMovies: async (req, res) => {
-        const {movie_id} = req.params
+        const {id} = req.params
         const {title, description, release_year, genre, author} = req.body
         try {
             const results = await Movie.update({
@@ -11,14 +11,29 @@ module.exports = {
                 release_year: release_year,
                 genre: genre,
                 author: author
-            }, {where:{
-                movie_id:movie_id
-            }});
+            }, 
+            {where:
+                {
+                movie_id:id,
+            },
+        });
 
             res.send({
                 message:'data berhasil di update',
                 result:results,
             })
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    getAllMovies: async (req, res) => {
+        try {
+            const result = await Movie.findAll();
+                    
+            // res.send({
+            //     result,
+            // });
+            res.send({result})
         } catch (error) {
             res.send(error);
         }
